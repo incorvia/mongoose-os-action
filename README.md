@@ -1,6 +1,7 @@
-# Mongoose OS docker action
+# Mongoose OS docker action - Shelly edition
 
-This action bundles Mongoose OS with mos tool to build firmware.
+This action bundles Mongoose OS with mos tool to build firmware. Fork for Shelly
+builds.
 
 ## Inputs
 
@@ -19,8 +20,9 @@ None
 ## Example usage
 
 ```yaml
-uses: dea82/mongoose-os-action@v1.0.0
+uses: yaourdt/mongoose-os-action@v1.0.0
 with:
   mos-yml-path: .
   platform: esp8266
+  build-var: MODEL=Shelly1
 ```

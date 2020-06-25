@@ -1,6 +1,6 @@
-name: 'Build Mongoose OS firmware'
+name: 'Build Mongoose OS firmware - Shelly edition'
 description: 'Builds a Mongoose OS firmware for given target'
-author: 'dea82'
+author: 'dea82, yaourdt'
 inputs:
   mos-yml-path:
     description: 'Path to mos.yml file'
@@ -10,6 +10,10 @@ inputs:
     description: 'The platform to build firmware for'
     required: true
     default: 'esp8266'
+  build-var:
+    description: 'Further build variables (eg. Shelly model)'
+    required: true
+    default: 'MODEL=Shelly1'
 runs:
   using: 'docker'
   image: 'Dockerfile'
@@ -20,6 +24,8 @@ runs:
     - '--verbose'
     - '--platform'
     - ${{ inputs.platform }}
+    - '--build-var'
+    - ${{ inputs.build-var }}
 branding:
   icon: 'cpu'
   color: 'blue'
