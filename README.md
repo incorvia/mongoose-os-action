@@ -28,4 +28,4 @@ with:
 ```
 
 ## Acknowledgments
-This is a fork of (Mongoose OS docker action)[https://github.com/dea82/mongoose-os-action].
+This is a fork of [Mongoose OS docker action](https://github.com/dea82/mongoose-os-action).
