@@ -20,9 +20,12 @@ None
 ## Example usage
 
 ```yaml
-uses: yaourdt/mongoose-os-action@v1.0.0
+uses: yaourdt/mongoose-os-action@v1.0.2
 with:
   mos-yml-path: .
   platform: esp8266
   build-var: MODEL=Shelly1
 ```
+
+## Acknowledgments
+This is a fork of (Mongoose OS docker action)[https://github.com/dea82/mongoose-os-action].
