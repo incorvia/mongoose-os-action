@@ -1,30 +1,36 @@
-# Mongoose OS docker action - Shelly edition
+# Mongoose OS docker action - V2
 
-This action bundles Mongoose OS with mos tool to build firmware. Fork for Shelly
-builds.
+This action builds Mongoose OS firmware files using the mos tool and it's integrated build service.
 
 ## Inputs
 
-### `mos-yml-path`
-
-**Required** Path to mos.yml. Default `"."`.
-
-### `platform`
-
-**Required** The platform to build firmware for. Default `"esp8266"`.
+| Name | Description | Required? | Default |
+|---|---|---|---|
+| `mos-yml-path` | path to _mos.yml_ file         | no | `.` |
+| `platform`     | target platform for this build | no | `esp8266` |
+| `build-args`   | further build arguments        | no | - |
 
 ## Outputs
 
-None
+The compiled firmware can be found in `./build/fw.zip`
 
 ## Example usage
 
+Build:
 ```yaml
-uses: yaourdt/mongoose-os-action@v1.0.2
+uses: yaourdt/mongoose-os-action@v2.0.0
 with:
   mos-yml-path: .
   platform: esp8266
-  build-var: MODEL=Shelly1
+  build-args: --build-var MODEL=Shelly1
+```
+
+Do something with the result (e.g. upload as artifact):
+```yaml
+uses: actions/upload-artifact@v2
+with:
+  name: my-firmware
+  path: ./build/fw.zip
 ```
 
 ## Acknowledgments
