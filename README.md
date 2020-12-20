@@ -18,7 +18,7 @@ The compiled firmware can be found in `./build/fw.zip`
 
 Build:
 ```yaml
-uses: yaourdt/mongoose-os-action@v2.0.0
+uses: yaourdt/mongoose-os-action@v2.0.1
 with:
   mos-yml-path: .
   platform: esp8266
